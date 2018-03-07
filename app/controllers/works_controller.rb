@@ -76,11 +76,12 @@ class WorksController < ApplicationController
       else
         flash[:result_text] = "Could not upvote"
         flash[:messages] = vote.errors.messages
-        status = :conflict
       end
     else
       flash[:result_text] = "You must log in to do that"
-      status = :unauthorized
+      # There is a long web standards debate about returning contents with a 401 status code
+      # but you cannot auto-redirect without a 30x status code, hence using the default redirect here
+      # (and above) via no special status code.
     end
 
     # Refresh the page to show either the updated vote count
