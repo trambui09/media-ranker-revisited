@@ -1,4 +1,4 @@
-<article class="media-details columns large-6 small-12">
+<article class="media-details">
   <h3><%= @work.title %></h3>
   <p>Created by: <%= @work.creator %></p>
   <p>Published: <%= @work.publication_year %></p>
@@ -11,7 +11,7 @@
   </section>
 </article>
 
-<article class="voting-users columns large-6 small-12">
+<article class="voting-users">
   <h3><%= @votes.count %> Votes for this <%= @media_category.capitalize.singularize %></h3>
   <table>
     <thead>

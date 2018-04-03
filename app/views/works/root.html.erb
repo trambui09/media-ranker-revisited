@@ -9,18 +9,20 @@
 
 <hr class="root-hr" />
 
-<%= render partial: "top_ten", locals: {
-  media_category: "movie",
-  data: @movies
-}
-%>
-<%= render partial: "top_ten", locals: {
-  media_category: "book",
-  data: @books
-}
-%>
-<%= render partial: "top_ten", locals: {
-  media_category: "album",
-  data: @albums
-}
-%>
+<section class="top-ten-container">
+  <%= render partial: "top_ten", locals: {
+    media_category: "movie",
+    data: @movies
+  }
+  %>
+  <%= render partial: "top_ten", locals: {
+    media_category: "book",
+    data: @books
+  }
+  %>
+  <%= render partial: "top_ten", locals: {
+    media_category: "album",
+    data: @albums
+  }
+  %>
+</section>
