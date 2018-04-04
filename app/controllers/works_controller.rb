@@ -72,7 +72,6 @@ class WorksController < ApplicationController
       if vote.save
         flash[:status] = :success
         flash[:result_text] = "Successfully upvoted!"
-        status = :found
       else
         flash[:result_text] = "Could not upvote"
         flash[:messages] = vote.errors.messages
@@ -86,7 +85,7 @@ class WorksController < ApplicationController
 
     # Refresh the page to show either the updated vote count
     # or the error message
-    redirect_back fallback_location: work_path(@work), status: status
+    redirect_back fallback_location: work_path(@work)
   end
 
 private
