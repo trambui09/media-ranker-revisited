@@ -212,23 +212,23 @@ describe WorksController do
       must_respond_with :redirect
     end
 
-    it "returns 401 unauthorized if no user is logged in" do
+    it "redirects to the work page if no user is logged in" do
       start_vote_count = work.votes.count
 
       post upvote_path(work)
-      must_respond_with :unauthorized
+      must_respond_with :redirect
 
       work.votes.count.must_equal start_vote_count
     end
 
-    it "returns 401 unauthorized after the user has logged out" do
+    it "redirects to the work page after the user has logged out" do
       start_vote_count = work.votes.count
 
       login
       logout
 
       post upvote_path(work)
-      must_respond_with :unauthorized
+      must_respond_with :redirect
 
       work.votes.count.must_equal start_vote_count
     end
@@ -246,14 +246,14 @@ describe WorksController do
       work.votes.count.must_equal start_vote_count + 1
     end
 
-    it "returns 409 conflict if the user has already voted for that work" do
+    it "redirects to the work page if the user has already voted for that work" do
       login
       Vote.create!(user: user, work: work)
 
       start_vote_count = work.votes.count
 
       post upvote_path(work)
-      must_respond_with :conflict
+      must_respond_with :redirect
 
       work.votes.count.must_equal start_vote_count
     end
