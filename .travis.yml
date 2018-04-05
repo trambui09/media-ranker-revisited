@@ -1,3 +1,8 @@
 language: ruby
 rvm:
   - 2.4.0
+
+script:
+  - rails db:create
+  - rails db:migrate
+  - rails test
