@@ -24,7 +24,7 @@ class Work < ApplicationRecord
 
   def self.by_category(category)
     category = category.singularize.downcase
-    self.where(category: category)
+    self.where(category: category).order(vote_count: :desc)
   end
 
   def self.best_albums
