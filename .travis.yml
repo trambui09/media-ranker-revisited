@@ -2,6 +2,9 @@ language: ruby
 rvm:
   - 2.4.0
 
+services:
+- postgresql
+
 script:
   - bin/rails db:create
   - bin/rails db:migrate
