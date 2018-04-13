@@ -54,6 +54,11 @@ a:hover {
 }
 
 
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
 .page-header {
   max-width: 100%;
@@ -130,6 +135,5 @@ section.spotlight > div {
 }
 
 main {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem;
 }
