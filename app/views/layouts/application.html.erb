@@ -11,30 +11,32 @@
 </head>
 
 <body>
-  <header class="page-header row">
+  <header class="page-header">
     <h2>
       <%= link_to "Media Ranker", root_path %>
       <small>Ranking the Best of Everything</small>
     </h2>
 
     <nav>
-      <%= link_to "View top media", root_path, class: "button" %>
-      <%= link_to "View all media", works_path, class: "button" %>
-      <%= link_to "Add a new work", new_work_path, class: "button" %>
-      <%= link_to "View all users", users_path, class: "button" %>
-      <div class="float-right">
+      <div class="site-nav">
+        <%= link_to "View top media", root_path, class: "button" %>
+        <%= link_to "View all media", works_path, class: "button" %>
+        <%= link_to "Add a new work", new_work_path, class: "button" %>
+        <%= link_to "View all users", users_path, class: "button" %>
+      </div>
+      <div class="user-nav">
         <% if @login_user %>
           <%= link_to "Logged in as #{@login_user.username}", user_path(@login_user), class: "button" %>
           <%= link_to "Log Out", logout_path, method: :post, class: "button" %>
         <% else %>
-          <%= link_to "Log In", login_path, class: "button float-right" %>
+          <%= link_to "Log In", login_path, class: "button" %>
         <% end %>
       </div>
     </nav>
   </header>
 
   <% if flash[:result_text] or flash[:messages] %>
-    <section class="row status <%= flash[:status] %>">
+    <section class="status <%= flash[:status] %>">
       <h3><%= flash[:status] == :failure ? "A problem occurred: " : "" %><%= flash[:result_text] %></h3>
       <% if flash[:messages] %>
         <ul>
@@ -48,7 +50,7 @@
     </section>
   <% end %>
 
-  <main class="row">
+  <main>
     <%= yield %>
   </main>
 </body>

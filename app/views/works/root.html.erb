@@ -1,5 +1,5 @@
 <% if @best_work %>
-  <section class="row spotlight">
+  <section class="spotlight">
     <div>
       <h3><span class="media-spotlight-header">Media Spotlight</span> <%= link_to @best_work.title, work_path(@best_work) %> by <%= @best_work.creator %></h3>
       <p><%= @best_work.vote_count %> votes - <%= @best_work.description %></p>
