@@ -62,10 +62,6 @@ class WorksController < ApplicationController
   end
 
   def upvote
-    # Most of these varied paths end in failure
-    # Something tragically beautiful about the whole thing
-    # For status codes, see
-    # http://stackoverflow.com/questions/3825990/http-response-code-for-post-when-resource-already-exists
     flash[:status] = :failure
     if @login_user
       vote = Vote.new(user: @login_user, work: @work)
@@ -78,9 +74,6 @@ class WorksController < ApplicationController
       end
     else
       flash[:result_text] = "You must log in to do that"
-      # There is a long web standards debate about returning contents with a 401 status code
-      # but you cannot auto-redirect without a 30x status code, hence using the default redirect here
-      # (and above) via no special status code.
     end
 
     # Refresh the page to show either the updated vote count
