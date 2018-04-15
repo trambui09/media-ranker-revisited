@@ -63,6 +63,7 @@ In this wave we will create authorization logic to enforce rules that govern wha
 ### Requirements
 -  Ensure that users who are not logged in can see *only* the main page with the spotlight and top 10 items. No other pages should be viewable by the guest user.
 -  Ensure that users who are logged in can see the rest of the pages.
+- Full unit testing around authentication using mocks
 
 
 ## Optional Wave 4: Advanced Authorization (Ownership)
@@ -85,3 +86,4 @@ Create advanced authorization logic to enforce rules that govern what _changes_ 
 -  [Ada Textbook Curriculum: Session](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/09-intermediate-rails/session.md)
 - [Ada Textbook Curriculum: OAuth](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/09-intermediate-rails/oauth.md)
 -  [OmniAuth Gem](https://github.com/omniauth/omniauth)
+- [Ada Textbook Curriculum: Testing Authentication Using Mocks](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/09-intermediate-rails/testing-auth.md)
