@@ -37,8 +37,10 @@ Take some time to understand what each controller is doing. Add tests to the exi
   - Delete
     - What should happen if the controller tries to delete an ID of a model that exists in the DB?
     - ... that doesn't exist in the DB?
-- Asserts on rendering, routing, and HTTP status when appropriate
-- Asserts on updates to the model when appropriate
+- Tests rendering, routing, and HTTP status when appropriate
+- Tests updates to the model when appropriate
+- Tests custom controller logic and custom routes when appropriate
+  - Tests positive, negative, nominal and edge cases
 
 ## Wave 2: Authentication via OAuth
 
