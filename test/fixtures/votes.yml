@@ -6,12 +6,12 @@
 #
 one:
   user: kari
-  work: thrill
+  work: album
 
 two:
   user: dan
-  work: mariner
+  work: another_album
 
 three:
   user: dan
-  work: thrill
+  work: album

@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-mariner:
-  title: Mariner
-  creator: Cult of Luna
-  description: Collaboration w/ Julie Christmas
-  publication_year: 2016-04-08
+album:
+  title: Old Title
+  creator: You Create
+  description: This is an older album
+  publication_year: 1955-11-01
   category: album
 
-thrill:
-  title: Can't Buy a Thrill
-  creator: Steely Dan
-  description: Dark, cryptic lyrics and catchy 70s hooks!
-  publication_year: 1972-11-01
+another_album:
+  title: New Title
+  creator: Who Creates
+  description: This is a newer album
+  publication_year: 2016-04-08
   category: album
 
 poodr:

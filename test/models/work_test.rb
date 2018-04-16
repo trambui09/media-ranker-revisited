@@ -3,17 +3,17 @@ require 'test_helper'
 describe Work do
   describe "relations" do
     it "has a list of votes" do
-       thrill = works(:thrill)
-       thrill.must_respond_to :votes
-       thrill.votes.each do |vote|
+       album = works(:album)
+       album.must_respond_to :votes
+       album.votes.each do |vote|
          vote.must_be_kind_of Vote
        end
     end
 
     it "has a list of voting users" do
-      thrill = works(:thrill)
-      thrill.must_respond_to :ranking_users
-      thrill.ranking_users.each do |user|
+      album = works(:album)
+      album.must_respond_to :ranking_users
+      album.ranking_users.each do |user|
         user.must_be_kind_of User
       end
     end
