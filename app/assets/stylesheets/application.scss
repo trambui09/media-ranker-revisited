@@ -42,31 +42,47 @@ a, h3 {
 
 a:hover {
   color: $dark-teal;
+  text-decoration: none;
 }
 
-.button {
+.btn-primary {
   background-color: $primary-teal;
+  color: white;
+  border: none;
 }
 
-.button:hover {
+.btn:hover {
   background-color: $dark-teal;
+  color: white;
 }
-
 
 nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
+}
+
+.site-nav .nav-item, .user-nav .nav-item {
+  margin-top: 1rem;
+}
+
+.site-nav .nav-item {
+  margin-right: 2rem;
+}
+
+.user-nav .nav-item {
+  margin-left: 2rem;
+}
+
+.list-group-item {
+  border: none;
 }
 
 .page-header {
   max-width: 100%;
-  // background: image-url('owl.jpg');
-  // background-repeat: no-repeat;
   background-color: $secondary-color;
-  border-bottom: 1px solid $light-gray;
-  margin-bottom: 10px;
-  padding: 25px 20px 10px 20px;
+  margin-bottom: 0.5rem;
+  padding: 2rem 1rem 0.5rem 1rem;
   h2 {
     text-align: center;
     margin: 25px auto 40px auto;
