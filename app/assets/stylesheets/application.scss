@@ -32,10 +32,6 @@ h1, h2, h3, h4, h5 {
   font-weight: bold;
 }
 
-body small {
-  color: slategrey;
-}
-
 a, h3 {
   color: $primary-teal;
 }
@@ -44,6 +40,8 @@ a:hover {
   color: $dark-teal;
   text-decoration: none;
 }
+
+// BOOTSTRAP OVERRIDES
 
 .btn-primary {
   background-color: $primary-teal;
@@ -56,25 +54,27 @@ a:hover {
   color: white;
 }
 
-nav {
+// ---
+
+.app-header__nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.site-nav .nav-item, .user-nav .nav-item {
+.app-header__nav_item {
   margin-top: 1rem;
 }
 
-.nav-item .nav-link {
+.app-header__nav_item .nav-link {
   color: $dark-teal;
 }
 
-.site-nav .nav-item {
+.app-header__site-nav-container .app-header__nav_item {
   margin-right: 2rem;
 }
 
-.user-nav .nav-item {
+.app-header__user-nav-container .nav-item {
   margin-left: 2rem;
 }
 
@@ -82,7 +82,7 @@ nav {
   border: none;
 }
 
-.page-header {
+.app-header__header {
   max-width: 100%;
   background-color: $secondary-color;
   margin-bottom: 0.5rem;
@@ -105,48 +105,55 @@ nav {
   }
 }
 
-.top-ten {
-  h3 {
-    border-bottom: $default-border;
-    border-bottom-color: $secondary-color;
-  }
-}
-
-.top-ten ul {
-  list-style-type: none;
-  margin-left: 0px;
-}
-
-section.spotlight > div {
+.spotlight {
   padding: 0 2rem 2rem 2rem;
 }
 
-.spotlight {
-  p {
-   margin-bottom: 0px;
-  }
-  a {
-    border-bottom: $default-border;
-  }
+.spotlight__header {
+  color: $primary-teal;
 }
 
-.media-spotlight-header {
+.spotlight__header--prefix {
   color: $dark-gray;
 }
 
-.media-spotlight-header::after {
+.spotlight__header--prefix::after {
   content: ":"
 }
 
-.root-hr {
-  margin: 0px auto 75px auto;
+.spotlight__link-to {
+  border-bottom: $default-border;
+}
+
+.spotlight__description {
+  margin-bottom: 0;
+}
+
+.root__hr {
+  margin: 0px auto 3rem auto;
   color: $light-gray;
 }
 
-.top-ten-container {
+.top-ten__container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 2em;
+}
+
+.top-ten__header {
+  color: $primary-teal;
+  border-bottom: $default-border;
+  border-bottom-color: $secondary-color;
+}
+
+.top-ten__list {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.top-ten__creator {
+  color: slategrey;
 }
 
 main {
