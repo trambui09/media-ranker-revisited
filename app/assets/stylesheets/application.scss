@@ -48,7 +48,7 @@ a:hover {
 .btn-primary {
   background-color: $primary-teal;
   color: white;
-  border: none;
+  border-color: $primary-teal;
 }
 
 .btn:hover {
@@ -103,10 +103,6 @@ nav {
   p {
     margin-bottom: 5px;
   }
-}
-
-.media-table .upvote.button {
-  margin: 0;
 }
 
 .top-ten {
