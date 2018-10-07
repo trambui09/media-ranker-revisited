@@ -13,6 +13,8 @@
  */
 
 @import "bootstrap";
+@import "users";
+@import "works";
 
 $primary-font: 'Gudea', sans-serif;
 $primary-teal: #26A69A;
@@ -32,7 +34,7 @@ h1, h2, h3, h4, h5 {
   font-weight: bold;
 }
 
-a, h3 {
+a, h2, h3 {
   color: $primary-teal;
 }
 
@@ -43,6 +45,10 @@ a:hover {
 
 // BOOTSTRAP OVERRIDES
 
+.alert {
+  margin: 0;
+}
+
 .btn-primary {
   background-color: $primary-teal;
   color: white;
@@ -52,6 +58,10 @@ a:hover {
 .btn:hover {
   background-color: $dark-teal;
   color: white;
+}
+
+.table td {
+  vertical-align: middle;
 }
 
 // ---
@@ -103,6 +113,10 @@ a:hover {
   p {
     margin-bottom: 5px;
   }
+}
+
+.alert__container {
+  margin: 2rem 0 1rem 0;
 }
 
 .spotlight {

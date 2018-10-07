@@ -1,5 +1,5 @@
 <section>
-  <h3><%= @work.title %></h3>
+  <h2><%= @work.title %></h2>
   <p>Created by: <%= @work.creator %></p>
   <p>Published: <%= @work.publication_year %></p>
   <p><%= @work.description %></p>
@@ -11,8 +11,8 @@
   </section>
 </section>
 
-<section>
-  <h3><%= @votes.count %> Votes for this <%= @media_category.capitalize.singularize %></h3>
+<section class="works-votes__container">
+  <h3 class="works-votes__header"><%= @votes.count %> Votes for this <%= @media_category.capitalize.singularize %></h3>
   <table class="table">
     <thead>
       <tr>
