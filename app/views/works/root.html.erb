@@ -1,15 +1,18 @@
 <% if @best_work %>
   <section class="spotlight">
-    <div>
-      <h3><span class="media-spotlight-header">Media Spotlight</span> <%= link_to @best_work.title, work_path(@best_work) %> by <%= @best_work.creator %></h3>
-      <p><%= @best_work.vote_count %> votes - <%= @best_work.description %></p>
-    </div>
+    <h2 class="spotlight__header">
+      <span class="spotlight__header--prefix">Media Spotlight</span>
+      <%= link_to @best_work.title, work_path(@best_work), class: "spotlight__link-to" %> by <%= @best_work.creator %>
+    </h2>
+    <p class="spotlight__description">
+      <%= @best_work.vote_count %> votes - <%= @best_work.description %>
+    </p>
   </section>
 <% end %>
 
-<hr class="root-hr" />
+<hr class="root__hr" />
 
-<section class="top-ten-container">
+<section class="top-ten__container">
   <%= render partial: "top_ten", locals: {
     media_category: "movie",
     data: @movies

@@ -1,29 +1,31 @@
-<h3>User Summary: <%= link_to @user.username, user_path(@user) %></h3>
+<h2>User Summary: <%= link_to @user.username, user_path(@user) %></h2>
 <p>Joined site <%= render_date @user.created_at %></p>
 
-<h4>Votes</h4>
-<table>
-  <thead>
-    <tr>
-      <th>Media Title</th>
-      <th>Created By</th>
-      <th>Published</th>
-      <th>Category</th>
-      <th>Voted On</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @user.votes.each do |vote| %>
+<section class="user-votes__container">
+  <h3 class="user-votes__header">Votes</h3>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= link_to vote.work.title, work_path(vote.work) %></td>
-        <td><%= vote.work.creator %></td>
-        <td><%= vote.work.publication_year %></td>
-        <td><%= vote.work.category.capitalize %></td>
-        <td><%= render_date vote.created_at %></td>
+        <th>Media Title</th>
+        <th>Created By</th>
+        <th>Published</th>
+        <th>Category</th>
+        <th>Voted On</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @user.votes.each do |vote| %>
+        <tr>
+          <td><%= link_to vote.work.title, work_path(vote.work) %></td>
+          <td><%= vote.work.creator %></td>
+          <td><%= vote.work.publication_year %></td>
+          <td><%= vote.work.category.capitalize %></td>
+          <td><%= render_date vote.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
 
-<%= link_to "See all Users", users_path, class: "button" %>
-<%= link_to "Back to Media List", root_path, class: "button" %>
+<%= link_to "See all Users", users_path, class: "btn btn-secondary" %>
+<%= link_to "Back to Media List", root_path, class: "btn btn-primary" %>
