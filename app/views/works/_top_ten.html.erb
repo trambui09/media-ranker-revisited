@@ -1,11 +1,13 @@
-<section class="top-ten">
-  <h3>Top <%= media_category.pluralize.capitalize %></h3>
-  <ul>
+<section class="top-ten__list-container">
+  <h2 class="top-ten__header">
+    Top <%= media_category.pluralize.capitalize %>
+  </h2>
+  <ul class="list-group top-ten__list">
     <% data.each do |datum| %>
-      <li>
+      <li class="list-group-item">
         <h4>
           <%= link_to datum.title, work_path(datum) %>
-          <small>by <%= datum.creator %></small>
+          <small class="top-ten__creator">by <%= datum.creator %></small>
         </h4>
         <p><%= datum.vote_count %> votes</p>
       </li>
