@@ -4,6 +4,7 @@
 - Add tests to controllers to verify controller logic
 - Practice using OAuth in a web application
 - Practice using Session variables to track a user across multiple HTTP requests
+- Practice defining rules to govern _authorization_ in a webapp
 
 ## Project Description
 
