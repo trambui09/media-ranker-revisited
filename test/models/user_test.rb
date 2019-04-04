@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 describe User do
   describe "relations" do
@@ -38,7 +38,5 @@ describe User do
       result.must_equal false
       user2.errors.messages.must_include :username
     end
-
-
   end
 end

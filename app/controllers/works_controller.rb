@@ -81,7 +81,8 @@ class WorksController < ApplicationController
     redirect_back fallback_location: work_path(@work)
   end
 
-private
+  private
+
   def media_params
     params.require(:work).permit(:title, :category, :creator, :description, :publication_year)
   end
