@@ -16,6 +16,11 @@ Why did we need to mock OAuth for testing?
   - To avoid using the GitHub as a dependency
   - Anything concrete about reducing risk around using actual GitHub accounts, resources, reducing complexity, etc. is fine too
 
+NOTES ABOUT TESTS:
+At project time, we give them:
+44 tests, 140 assertions, 0 failures, 0 errors, 4 skips
+At project submission, we expect more tests/assertions, and 0 skips
+
  -->
 
 Feature | Feedback

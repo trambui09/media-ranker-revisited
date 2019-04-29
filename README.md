@@ -41,38 +41,14 @@ Following the steps in the Textbook curriculum, add OAuth to your Media Ranker A
   - `UsersController`
   - `User` model
 
-### Wave 2: Controller Tests for the `WorksController` CRUD
-
-Take some time to understand what each controller is doing. Add tests to the `WorksController` in this project. Be sure to consider both nominal and edge cases for every user flow possible.
-
-#### Requirements
-
-- Tests on CRUD operations that your `WorksController` can execute
-  - Create
-    - What should happen if the controller executes creation of something with valid data?
-    - ... with invalid data?
-  - Read (Show)
-    - What should happen if the controller tries to read/show an ID of a model that exists in the DB?
-    - ... that doesn't exist in the DB?
-  - Update
-    - What should happen if the controller executes an update of something with valid data?
-    - ... with invalid data?
-  - Delete
-    - What should happen if the controller tries to delete an ID of a model that exists in the DB?
-    - ... that doesn't exist in the DB?
-- Tests rendering, routing, and HTTP status when appropriate
-- Tests updates to the model when appropriate
-- Tests for the `root` and `index` custom controller logic when appropriate
-  - Tests positive, negative, nominal and edge cases
-
-### Wave 3: Controller Tests on `upvote` and `UsersController`
+### Wave 2: Controller Tests on `upvote` and `UsersController`
 
 - Add tests around logging in functionality using OAuth mocks
 - Add tests around logging out functionality using OAuth mocks
 - Add tests to the `WorksController` `upvote` action using OAuth mocks
   - Be sure to test nominal and edge cases
 
-### Wave 4: Basic Authorization (Page Access)
+### Wave 3: Basic Authorization (Page Access)
 
 Create and test authorization logic to enforce rules that govern what pages on the site users and guests (unauthenticated users) can view.
 
@@ -102,7 +78,7 @@ As a **logged-in user**, I want to be able to...
 
 Ensure that you have updated all relevant `WorksController` tests around authentication using mocks
 
-## Optional Wave 5: Advanced Authorization (Ownership)
+## Optional Wave 4: Advanced Authorization (Ownership)
 
 Create advanced authorization logic to enforce rules that govern what _changes_ users can make to the site's data. The rules here are more complex than for accessing pages:
 - Guests cannot change any data on the site

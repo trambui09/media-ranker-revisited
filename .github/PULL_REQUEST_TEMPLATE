@@ -6,5 +6,5 @@ Question | Answer
 ---      | ---
 What did you need to configure and setup to make OAuth installed and work? | 
 What areas of Rails app code did you need to create/write/modify in order to change logging in to use OAuth? | 
-What was one edge case you tested? How did this differ from the nominal case? | 
+What was one controller test you updated? Why did you need to update it? | 
 Why did we need to mock OAuth for testing? | 
