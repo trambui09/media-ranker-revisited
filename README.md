@@ -41,7 +41,7 @@ Following the steps in the Textbook curriculum, add OAuth to your Media Ranker A
   - `UsersController`
   - `User` model
 
-### Wave 2: Controller Tests for the `WorksController`
+### Wave 2: Controller Tests for the `WorksController` CRUD
 
 Take some time to understand what each controller is doing. Add tests to the `WorksController` in this project. Be sure to consider both nominal and edge cases for every user flow possible.
 
@@ -65,17 +65,44 @@ Take some time to understand what each controller is doing. Add tests to the `Wo
 - Tests for the `root` and `index` custom controller logic when appropriate
   - Tests positive, negative, nominal and edge cases
 
-## Wave 3: Basic Authorization (Page Access)
+### Wave 3: Controller Tests on `upvote` and `UsersController`
 
-In this wave we will create authorization logic to enforce rules that govern what pages on the site users and guests (unauthenticated browsers) can view. The rule we'll use is that guests can only access the main page, and all logged-in users can access the show and index pages for all categories of work.
+- Add tests around logging in functionality using OAuth mocks
+- Add tests around logging out functionality using OAuth mocks
+- Add tests to the `WorksController` `upvote` action using OAuth mocks
+  - Be sure to test nominal and edge cases
 
-### Requirements
--  Ensure that users who are not logged in can see *only* the main page with the spotlight and top 10 items. No other pages should be viewable by the guest user.
--  Ensure that users who are logged in can see the rest of the pages.
-- Full unit testing around authentication using mocks
+### Wave 4: Basic Authorization (Page Access)
 
+Create and test authorization logic to enforce rules that govern what pages on the site users and guests (unauthenticated users) can view.
 
-## Optional Wave 4: Advanced Authorization (Ownership)
+#### Terminology
+
+- Guest user: a user who is not logged in
+- Main page: the page with the spotlight and top 10 items accessed by `localhost:3000` and marked as `root_path`
+
+#### Requirements
+
+As a **guest user**, I want to be able to...
+
+  - access the main page without an error message
+  - access the index page should be redirected to the main page with an error message
+  - access the show page for any work should be redirected to the main page with an error message
+
+... so that I can see parts of the website, but know that I must log-in for full functionality
+
+As a **logged-in user**, I want to be able to...
+
+  - access the show page for any work of any category
+  - access the show page for any index page
+
+... so that I can use full site functionality as a site member
+
+#### Testing Requirements
+
+Ensure that you have updated all relevant `WorksController` tests around authentication using mocks
+
+## Optional Wave 5: Advanced Authorization (Ownership)
 
 Create advanced authorization logic to enforce rules that govern what _changes_ users can make to the site's data. The rules here are more complex than for accessing pages:
 - Guests cannot change any data on the site
