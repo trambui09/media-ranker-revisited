@@ -41,12 +41,13 @@ Following the steps in the Textbook curriculum, add OAuth to your Media Ranker A
   - `UsersController`
   - `User` model
 
-## Wave 1: Controller Tests
+### Wave 2: Controller Tests for the `WorksController`
 
-Take some time to understand what each controller is doing. Add tests to the existing controllers in this project. Be sure to consider both nominal and edge cases for every user flow possible.
+Take some time to understand what each controller is doing. Add tests to the `WorksController` in this project. Be sure to consider both nominal and edge cases for every user flow possible.
 
-### Requirements
-- Tests on CRUD operations that your controller can execute
+#### Requirements
+
+- Tests on CRUD operations that your `WorksController` can execute
   - Create
     - What should happen if the controller executes creation of something with valid data?
     - ... with invalid data?
@@ -61,9 +62,8 @@ Take some time to understand what each controller is doing. Add tests to the exi
     - ... that doesn't exist in the DB?
 - Tests rendering, routing, and HTTP status when appropriate
 - Tests updates to the model when appropriate
-- Tests custom controller logic and custom routes when appropriate
+- Tests for the `root` and `index` custom controller logic when appropriate
   - Tests positive, negative, nominal and edge cases
-
 
 ## Wave 3: Basic Authorization (Page Access)
 
