@@ -78,7 +78,7 @@ As a **logged-in user**, I want to be able to...
 
 Ensure that you have updated all relevant `WorksController` tests around authentication using mocks
 
-## Optional Wave 4: Advanced Authorization (Ownership)
+### Optional Wave 4: Advanced Authorization (Ownership)
 
 Create advanced authorization logic to enforce rules that govern what _changes_ users can make to the site's data. The rules here are more complex than for accessing pages:
 - Guests cannot change any data on the site
@@ -88,7 +88,7 @@ Create advanced authorization logic to enforce rules that govern what _changes_ 
   - Edit that work
   - Delete that work
 
-### Tasks
+#### Tasks
 - Modify the edit and delete functionality to ensure that users can only change works they are associated with.
   - Consider how this could be implemented at the model layer.
 - Do some research into how to use Google or another OAuth provider for authentication and use that provider.
