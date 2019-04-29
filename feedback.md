@@ -4,9 +4,8 @@
 Feature | Feedback
 ---     | ---
 **General** |
-Appropriate Tests on WorksController | 
-Appropriate Tests on SessionsController | 
-Appropriate Tests on UsersController | 
 Completed OAuth | 
+Appropriate Tests on WorksController | 
+Appropriate Tests on UsersController | 
 Basic Authorization (who can see what) | 
 **Overall** |

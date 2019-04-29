@@ -1,4 +1,9 @@
-# Media Ranker Revisited
+# MediaRanker Revisited
+
+## At a Glance
+
+- Individual, [stage 2](https://github.com/Ada-Developers-Academy/pedagogy/blob/master/rule-of-three.md#stage-2) project
+- Due before class, *DATE HERE*
 
 ## Learning Goals
 - Practice using OAuth in a web application
@@ -6,7 +11,7 @@
 - Add tests to controllers to verify controller logic
 - Practice defining rules to govern _authorization_ in a webapp
 
-## Project Description
+## Objective
 
 We are providing you with an implementation of MediaRanker. Use this MediaRanker to begin this project.
 
@@ -19,6 +24,8 @@ In this assignment you will modify Media Ranker in two ways:
 1. our controllers will finally have tests that test controller logic
 
 Build your project using _branches_, with at least _one branch_ per wave.  As you finish a wave merge the changes into the main branch. Submit one pull request at the end once you are complete to submit the project.
+
+## Implementation Requirements
 
 ## Wave 1: Controller Tests
 
@@ -82,3 +89,6 @@ Create advanced authorization logic to enforce rules that govern what _changes_ 
   - Consider how this could be implemented at the model layer.
 - Do some research into how to use Google or another OAuth provider for authentication and use that provider.
 
+## What Instructors Are Looking For
+
+Check out the [feedback template](feedback.md) which lists the items instructors will be looking for as they evaluate your project.
