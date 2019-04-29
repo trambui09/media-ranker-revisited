@@ -1,73 +1,84 @@
-# Media Ranker Revisited
+# MediaRanker Revisited
+
+## At a Glance
+
+- Individual, [stage 2](https://github.com/Ada-Developers-Academy/pedagogy/blob/master/rule-of-three.md#stage-2) project
+- Due before class, *DATE HERE*
 
 ## Learning Goals
-- Add tests to controllers to verify controller logic
 - Practice using OAuth in a web application
 - Practice using Session variables to track a user across multiple HTTP requests
+- Add tests to controllers to verify controller logic
 - Practice defining rules to govern _authorization_ in a webapp
 
-## Project Description
+## Objective
 
 We are providing you with an implementation of MediaRanker. Use this MediaRanker to begin this project.
 
 Our MediaRanker web app was a wonderful website with two major flaws:
-1. our controllers are untested
 1. the way we implemented user login is extremely insecure
+1. our controllers are untested
 
 In this assignment you will modify Media Ranker in two ways:
-1. our controllers will finally have tests that test controller logic
 1. our web app can securely **authenticate** multiple users via OAuth and **authorize** them to view, manage and vote on works
+1. our controllers will finally have tests that test controller logic
 
-Build your project using _branches_, with at least _one branch_ per wave.  As you finish a wave merge the changes into the main branch. Submit one pull request at the end once you are complete.
+Build your project using _branches_, with at least _one branch_ per wave.  As you finish a wave merge the changes into the main branch. Submit one pull request at the end once you are complete to submit the project.
 
-## Wave 1: Controller Tests
+## Implementation Requirements
 
-Take some time to understand what each controller is doing. Add tests to the existing controllers in this project. Be sure to consider both nominal and edge cases for every user flow possible.
+### Wave 1: Authentication via OAuth
 
-### Requirements
-- Tests on CRUD operations that your controller can execute
-  - Create
-    - What should happen if the controller executes creation of something with valid data?
-    - ... with invalid data?
-  - Read (Show)
-    - What should happen if the controller tries to read/show an ID of a model that exists in the DB?
-    - ... that doesn't exist in the DB?
-  - Update
-    - What should happen if the controller executes an update of something with valid data?
-    - ... with invalid data?
-  - Delete
-    - What should happen if the controller tries to delete an ID of a model that exists in the DB?
-    - ... that doesn't exist in the DB?
-- Tests rendering, routing, and HTTP status when appropriate
-- Tests updates to the model when appropriate
-- Tests custom controller logic and custom routes when appropriate
-  - Tests positive, negative, nominal and edge cases
+Following the steps in the Textbook curriculum, add OAuth to your Media Ranker Application and enable a user to log in using GitHub.
 
-<!-- ## Wave 2: Authentication via OAuth
+#### Requirements
 
-Following the steps in the Textbook curriculum, add OAuth to your Media Ranker Application and enable a user to log in.
-
-### Requirements
 - Add all necessary gems and configuration
 - Repurpose the existing login functionality to now be a single log in button (on home page or nav bar)
 - The log in button shall turn in to a log out button when the user is logged in
 - All other requirements from in-class notes apply:
   - Managed via `session`
-  - `SessionsController`
-  - `User` model -->
+  - `UsersController`
+  - `User` model
 
+### Wave 2: Controller Tests on `upvote` and `UsersController`
 
-<!-- ## Wave 3: Basic Authorization (Page Access)
+- Add tests around logging in functionality using OAuth mocks
+- Add tests around logging out functionality using OAuth mocks
+- Add tests to the `WorksController` `upvote` action using OAuth mocks
+  - Be sure to test nominal and edge cases
 
-In this wave we will create authorization logic to enforce rules that govern what pages on the site users and guests (unauthenticated browsers) can view. The rule we'll use is that guests can only access the main page, and all logged-in users can access the show and index pages for all categories of work.
+### Wave 3: Basic Authorization (Page Access)
 
-### Requirements
--  Ensure that users who are not logged in can see *only* the main page with the spotlight and top 10 items. No other pages should be viewable by the guest user.
--  Ensure that users who are logged in can see the rest of the pages.
-- Full unit testing around authentication using mocks
+Create and test authorization logic to enforce rules that govern what pages on the site users and guests (unauthenticated users) can view.
 
+#### Terminology
 
-## Optional Wave 4: Advanced Authorization (Ownership)
+- Guest user: a user who is not logged in
+- Main page: the page with the spotlight and top 10 items accessed by `localhost:3000` and marked as `root_path`
+
+#### Requirements
+
+As a **guest user**, I want to be able to...
+
+  - access the main page without an error message
+  - access the index page should be redirected to the main page with an error message
+  - access the show page for any work should be redirected to the main page with an error message
+
+... so that I can see parts of the website, but know that I must log-in for full functionality
+
+As a **logged-in user**, I want to be able to...
+
+  - access the show page for any work of any category
+  - access the show page for any index page
+
+... so that I can use full site functionality as a site member
+
+#### Testing Requirements
+
+Ensure that you have updated all relevant `WorksController` tests around authentication using mocks
+
+### Optional Wave 4: Advanced Authorization (Ownership)
 
 Create advanced authorization logic to enforce rules that govern what _changes_ users can make to the site's data. The rules here are more complex than for accessing pages:
 - Guests cannot change any data on the site
@@ -77,17 +88,11 @@ Create advanced authorization logic to enforce rules that govern what _changes_ 
   - Edit that work
   - Delete that work
 
-### Tasks
+#### Tasks
 - Modify the edit and delete functionality to ensure that users can only change works they are associated with.
   - Consider how this could be implemented at the model layer.
-- Do some research into how to use Google or another OAuth provider for authentication and use that provider. -->
+- Do some research into how to use Google or another OAuth provider for authentication and use that provider.
 
-## Due Date
-This project is due before class May 1 via PR against Ada-C9/MediaRanker-Revisited.
+## What Instructors Are Looking For
 
-## Resources
-- [Ada Textbook Curriculum: Controller Testing](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/08-rails/test-controllers.md)
--  [Ada Textbook Curriculum: Session](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/09-intermediate-rails/session.md)
-- [Ada Textbook Curriculum: OAuth](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/09-intermediate-rails/oauth.md)
--  [OmniAuth Gem](https://github.com/omniauth/omniauth)
-- [Ada Textbook Curriculum: Testing Authentication Using Mocks](https://github.com/Ada-Developers-Academy/textbook-curriculum/blob/master/09-intermediate-rails/testing-auth.md)
+Check out the [feedback template](feedback.md) which lists the items instructors will be looking for as they evaluate your project.
