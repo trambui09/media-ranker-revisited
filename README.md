@@ -1,9 +1,9 @@
 # Media Ranker Revisited
 
 ## Learning Goals
-- Add tests to controllers to verify controller logic
 - Practice using OAuth in a web application
 - Practice using Session variables to track a user across multiple HTTP requests
+- Add tests to controllers to verify controller logic
 - Practice defining rules to govern _authorization_ in a webapp
 
 ## Project Description
@@ -11,14 +11,14 @@
 We are providing you with an implementation of MediaRanker. Use this MediaRanker to begin this project.
 
 Our MediaRanker web app was a wonderful website with two major flaws:
-1. our controllers are untested
 1. the way we implemented user login is extremely insecure
+1. our controllers are untested
 
 In this assignment you will modify Media Ranker in two ways:
-1. our controllers will finally have tests that test controller logic
 1. our web app can securely **authenticate** multiple users via OAuth and **authorize** them to view, manage and vote on works
+1. our controllers will finally have tests that test controller logic
 
-Build your project using _branches_, with at least _one branch_ per wave.  As you finish a wave merge the changes into the main branch. Submit one pull request at the end once you are complete.
+Build your project using _branches_, with at least _one branch_ per wave.  As you finish a wave merge the changes into the main branch. Submit one pull request at the end once you are complete to submit the project.
 
 ## Wave 1: Controller Tests
 
