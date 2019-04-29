@@ -27,6 +27,20 @@ Build your project using _branches_, with at least _one branch_ per wave.  As yo
 
 ## Implementation Requirements
 
+### Wave 1: Authentication via OAuth
+
+Following the steps in the Textbook curriculum, add OAuth to your Media Ranker Application and enable a user to log in using GitHub.
+
+#### Requirements
+
+- Add all necessary gems and configuration
+- Repurpose the existing login functionality to now be a single log in button (on home page or nav bar)
+- The log in button shall turn in to a log out button when the user is logged in
+- All other requirements from in-class notes apply:
+  - Managed via `session`
+  - `UsersController`
+  - `User` model
+
 ## Wave 1: Controller Tests
 
 Take some time to understand what each controller is doing. Add tests to the existing controllers in this project. Be sure to consider both nominal and edge cases for every user flow possible.
@@ -49,19 +63,6 @@ Take some time to understand what each controller is doing. Add tests to the exi
 - Tests updates to the model when appropriate
 - Tests custom controller logic and custom routes when appropriate
   - Tests positive, negative, nominal and edge cases
-
-## Wave 2: Authentication via OAuth
-
-Following the steps in the Textbook curriculum, add OAuth to your Media Ranker Application and enable a user to log in.
-
-### Requirements
-- Add all necessary gems and configuration
-- Repurpose the existing login functionality to now be a single log in button (on home page or nav bar)
-- The log in button shall turn in to a log out button when the user is logged in
-- All other requirements from in-class notes apply:
-  - Managed via `session`
-  - `SessionsController`
-  - `User` model
 
 
 ## Wave 3: Basic Authorization (Page Access)
