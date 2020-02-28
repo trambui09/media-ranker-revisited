@@ -41,8 +41,7 @@ class WorksController < ApplicationController
   end
 
   def update
-    @work.update_attributes(media_params)
-    if @work.save
+    if @work.update(media_params)
       flash[:status] = :success
       flash[:result_text] = "Successfully updated #{@media_category.singularize} #{@work.id}"
       redirect_to work_path(@work)

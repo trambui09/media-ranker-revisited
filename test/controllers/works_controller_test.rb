@@ -87,9 +87,9 @@ describe WorksController do
       INVALID_CATEGORIES.each do |category|
         invalid_work = { work: { title: "Invalid Work", category: category } }
 
-        proc { post works_path, params: invalid_work }.wont_change "Work.count"
+        expect { post works_path, params: invalid_work }.wont_change "Work.count"
 
-        Work.find_by(title: "Invalid Work", category: category).must_be_nil
+        expect(Work.find_by(title: "Invalid Work", category: category)).must_be_nil
         must_respond_with :bad_request
       end
     end
@@ -138,7 +138,7 @@ describe WorksController do
       }.wont_change "Work.count"
       updated_work = Work.find_by(id: existing_work.id)
 
-      updated_work.title.must_equal "Dirty Computer"
+      expect(updated_work.title).must_equal "Dirty Computer"
       must_respond_with :redirect
       must_redirect_to work_path(existing_work.id)
     end

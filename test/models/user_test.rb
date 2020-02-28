@@ -4,17 +4,17 @@ describe User do
   describe "relations" do
     it "has a list of votes" do
       dan = users(:dan)
-      dan.must_respond_to :votes
+      expect(dan).must_respond_to :votes
       dan.votes.each do |vote|
-        vote.must_be_kind_of Vote
+        expect(vote).must_be_kind_of Vote
       end
     end
 
     it "has a list of ranked works" do
       dan = users(:dan)
-      dan.must_respond_to :ranked_works
+      expect(dan).must_respond_to :ranked_works
       dan.ranked_works.each do |work|
-        work.must_be_kind_of Work
+        expect(work).must_be_kind_of Work
       end
     end
   end
@@ -22,8 +22,8 @@ describe User do
   describe "validations" do
     it "requires a username" do
       user = User.new
-      user.valid?.must_equal false
-      user.errors.messages.must_include :username
+      expect(user.valid?).must_equal false
+      expect(user.errors.messages).must_include :username
     end
 
     it "requires a unique username" do
@@ -35,8 +35,8 @@ describe User do
 
       user2 = User.new(username: username)
       result = user2.save
-      result.must_equal false
-      user2.errors.messages.must_include :username
+      expect(result).must_equal false
+      expect(user2.errors.messages).must_include :username
     end
   end
 end
