@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails'
+gem 'rails', '~> 6.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -51,7 +51,6 @@ end
 group :test do
   gem 'minitest-rails'
   gem 'minitest-reporters'
-  gem 'minitest-spec-rails'
   gem 'minitest-skip'
 end
 
