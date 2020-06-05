@@ -1,9 +1,11 @@
-# MediaRanker Revisited
-Congratulations! You're submitting your assignment!
+# Assignment Submission: Media Ranker Revisited
 
-## Comprehension Questions
-Question | Answer
----      | ---
+Congratulations! You're submitting your assignment. Please reflect on the assignment with these questions.
+
+## Reflection
+
+Prompt | Response
+--- | ---
 What did you need to configure and setup to make OAuth installed and work? | 
 What areas of Rails app code did you need to create/write/modify in order to change logging in to use OAuth? | 
 What was one controller test you updated? Why did you need to update it? | 

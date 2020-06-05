@@ -1,5 +1,10 @@
 # MediaRanker Revisted
-## What We're Looking For
+
+<!-- Instructors: The checkmarks are already there, so just delete them for any line items that aren't met. -->
+
+## Major Learning Goals/Code Review
+
+<!-- Instructors: Feel free to practice creating specific feedback by referencing a line of code if you'd like. For example, you may say something like "nice custom method in `calculator.rb` line 42." This is optional. -->
 
 <!--
 
@@ -9,8 +14,9 @@ What did you need to configure and setup to make OAuth installed and work?
 What areas of Rails app code did you need to create/write/modify in order to change logging in to use OAuth?
   - Routes, controllers, models, views (if this includes migrations, tests, etc, or any of the above files, that's okay)
 
-What was one edge case you tested? How did this differ from the nominal case?
-  - Anything reasonable, use best judgment
+What was one controller test you updated?
+  - Anything reasonable, use best judgment.
+  - The obvious answer is: The `index` and `show` actions for work require authorization for Wave 3
 
 Why did we need to mock OAuth for testing?
   - To avoid using the GitHub as a dependency
@@ -18,16 +24,32 @@ Why did we need to mock OAuth for testing?
 
 NOTES ABOUT TESTS:
 At project time, we give them:
-44 tests, 140 assertions, 0 failures, 0 errors, 4 skips
+61 tests, 140 assertions, 0 failures, 0 errors, 21 skips
 At project submission, we expect more tests/assertions, and 0 skips
 
  -->
 
-Feature | Feedback
----     | ---
-**General** |
-Completed OAuth | 
-Appropriate Tests on WorksController | 
-Appropriate Tests on UsersController | 
-Basic Authorization (who can see what) | 
-**Overall** |
+| Criteria | yes/no, and optionally any details/lines of code to reference |
+| --- | --- |
+| There are tests around the `User` model | ✔️?
+| There are tests for `UsersController#login` and `UsersController#logout` that use OAuth mocks | ✔️?
+| There are tests for `WorksController#upvote` that use OAuth mocks | ✔️?
+
+## Functional Requirements
+
+| Functional Requirement | yes/no |
+| --- | --- |
+| Completed OAuth: Logging in goes through GitHub | ✔️?
+| Logged-in users can access the index and show pages, guest users get redirected | ✔️?
+
+## Overall Feedback
+
+| Overall Feedback | Criteria | yes/no |
+| --- | --- | --- |
+| Green (Meets/Exceeds Standards) | 3 in Code Review && 2 in Functional Requirements | 
+| Yellow (Approaches Standards) | 2 in Code Review or 1 in Functional Requirements, or the instructor judges that this project needs special attention | 
+| Red (Not at Standard) | 0 in Code Review or 0 in Functional Reqs, or assignment is breaking/doesn’t run with less than 5 minutes of debugging, or the instructor judges that this project needs special attention | 
+
+<!-- ### Additional Feedback -->
+
+<!-- Instructors, feel free to ignore this section if there's nothing else to add. -->
