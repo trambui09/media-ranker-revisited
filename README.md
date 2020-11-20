@@ -42,14 +42,14 @@ Following the steps in the Textbook curriculum, add OAuth to your Media Ranker A
   - `UsersController`
   - `User` model
 
-### Wave 2: Controller Tests on `upvote` and `UsersController`
+### Optional Wave 2: Controller Tests on `upvote` and `UsersController`
 
 - Add tests around logging in functionality using OAuth mocks
 - Add tests around logging out functionality using OAuth mocks
 - Add tests to the `WorksController` `upvote` action using OAuth mocks
   - Be sure to test nominal and edge cases
 
-### Wave 3: Basic Authorization (Page Access)
+### Optional Wave 3: Basic Authorization (Page Access)
 
 Create and test authorization logic to enforce rules that govern what pages on the site users and guests (unauthenticated users) can view.
 
