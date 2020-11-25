@@ -7,6 +7,7 @@
 - Submit this project with a PR
 
 ## Learning Goals
+
 - Practice using OAuth in a web application
 - Practice using Session variables to track a user across multiple HTTP requests
 - Add tests to controllers to verify controller logic
@@ -25,6 +26,9 @@ In this assignment you will modify Media Ranker in two ways:
 1. our controllers will finally have tests that test controller logic
 
 Build your project using _branches_, with at least _one branch_ per wave.  As you finish a wave merge the changes into the main branch. Submit one pull request at the end once you are complete to submit the project.
+
+**Provided Tests**
+We have provided controller tests (commented out) for the `UsersController` which you can use, or adapt for your use.  We have similarly commented out fields in the fixtures which could be useful when you have implemented Oauth.
 
 ## Implementation Requirements
 
