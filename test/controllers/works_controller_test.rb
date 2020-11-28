@@ -189,11 +189,24 @@ describe WorksController do
 
   describe "upvote" do
     it "redirects to the work page if no user is logged in" do
-      skip
+      post upvote_path(existing_work)
+
+      must_respond_with :redirect
+      must_redirect_to work_path(existing_work)
+      expect(flash[:result_text]).must_equal "You must log in to do that"
     end
 
     it "redirects to the work page after the user has logged out" do
-      skip
+      # log in ada
+      user = users(:ada)
+      perform_login(user)
+      # log out ada
+      post logout_path
+      post upvote_path(existing_work)
+
+      must_respond_with :redirect
+      must_redirect_to work_path(existing_work)
+      expect(flash[:result_text]).must_equal "You must log in to do that"
     end
 
     it "succeeds for a logged-in user and a fresh user-vote pair" do
@@ -202,17 +215,36 @@ describe WorksController do
       perform_login(user)
       vote_start_count = existing_work.vote_count
 
-      post upvote_path(existing_work)
+      expect {
+        post upvote_path(existing_work)
+      }.must_change 'Vote.count', 1
+
+
       found_work = Work.find_by(id: existing_work.id )
-      
+
       expect(found_work.vote_count).must_equal vote_start_count + 1
       must_respond_with :redirect
       must_redirect_to work_path(existing_work)
+      expect(flash[:result_text]).must_equal "Successfully upvoted!"
 
     end
 
     it "redirects to the work page if the user has already voted for that work" do
-      skip
+      user = users(:dan)
+      perform_login(user)
+      vote_start_count = existing_work.vote_count
+
+      expect {
+        post upvote_path(existing_work.id)
+      }.wont_differ 'Vote.count'
+
+      found_work = Work.find_by(id: existing_work.id )
+
+      # work's vote count must be unchanged
+      expect(found_work.vote_count).must_equal vote_start_count
+      must_respond_with :redirect
+      must_redirect_to work_path(existing_work)
+      expect(flash[:result_text]).must_equal 'Could not upvote'
     end
   end
 end
