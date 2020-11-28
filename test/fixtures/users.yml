@@ -10,3 +10,8 @@ kari:
   uid: 67890
   provider: github
   email: kari@kari.com
+ada:
+  username: ada
+  uid: 56874
+  provider: github
+  email: ada@ada.com

@@ -197,7 +197,18 @@ describe WorksController do
     end
 
     it "succeeds for a logged-in user and a fresh user-vote pair" do
-      skip
+      # arrange
+      user = users(:ada)
+      perform_login(user)
+      vote_start_count = existing_work.vote_count
+
+      post upvote_path(existing_work)
+      found_work = Work.find_by(id: existing_work.id )
+      
+      expect(found_work.vote_count).must_equal vote_start_count + 1
+      must_respond_with :redirect
+      must_redirect_to work_path(existing_work)
+
     end
 
     it "redirects to the work page if the user has already voted for that work" do
