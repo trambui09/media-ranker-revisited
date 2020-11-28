@@ -18,8 +18,8 @@ class ApplicationController < ActionController::Base
   def require_login
     if @login_user.nil?
       flash[:status] = :failure
-      flash[:result_text] = "You must be logged in to do that"
-      redirect_to root_path
+      flash[:result_text] = "You must log in to do that"
+      redirect_back fallback_location: '/'
       return
     end
   end
